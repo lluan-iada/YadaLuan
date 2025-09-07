@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    valor recebido com a venda de peças
+    <input type="text" id="input_pecas" /> <br />
+
+    valor recebido com a venda de serviços
+    <input type="text" id="input_servicos" /> <br />
+
+    percentual de imposto sobre os valores recebidos
+    <input type="text" id="input_percentual" /> <br />
+
+    valor dos gastos realizados no mês
+    <input type="text" id="input_gastos" /> <br />
+
+    <button onclick="acumular()">Acumular</button>
+
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+<script>
+    var mes = 0;
+    var acumulado = 0;
+
+    function acumular() {
+        var pecas = Number(input_pecas.value);
+        var servicos = Number(input_servicos.value);
+        var percentual = Number(input_percentual.value); // 20
+        var gastos = Number(input_gastos.value);
+
+        var total_recebido = pecas + servicos; // 1000
+        var percentual_aplicado = (total_recebido * percentual) / 100;
+        var saldo_final = total_recebido - percentual_aplicado - gastos;
+
+        mes++;
+        // acumulado = acumulado + saldo_final;
+        acumulado += saldo_final;
+
+        div_mensagem.innerHTML += `
+         Resumo do mês ${mes}: <br> 
+         Total recebido = R$ ${total_recebido} <br>
+         Valor do Imposto = R$ ${percentual_aplicado} <br> 
+         Saldo Final de R$ ${saldo_final} <br> 
+         Acumulado até o Momento = R$ ${acumulado} <br><br>
+      `;
+    }
+</script>

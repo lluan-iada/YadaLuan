@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   Informe a frequência do aluno: <br>
+   <input type="text" id="input_frequencia"> <br><br>
+
+   <button onclick="analisar()">Analisar frequência</button> <br>
+
+   <div id="div_msg"></div>
+
+</body>
+<script>
+    function analisar(){
+        var frequencia = Number(input_frequencia.value)
+
+        if (frequencia < 50){
+            div_msg.innerHTML = (`<img src="https://media.gettyimages.com/id/536754557/pt/foto/turista-beber-cerveja.jpg?s=612x612&w=gi&k=20&c=LGTfKylD9hUmD1vTIUnVYnEABZp8GS1jHqbZJahr2jk=">`)
+        } else div_msg.innerHTML = (`<img src="https://st2.depositphotos.com/3489481/5369/i/950/depositphotos_53691979-stock-photo-crazy-looking-nerdy-male-student.jpg">`)
+    }
+</script>
+</html>

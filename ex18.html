@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe um número: <br>
+    <input type="text" id="input_n1"> <br><br>
+
+    Informe um número: <br>
+    <input type="text" id="input_n2"><br><br>
+
+    <button onclick="testar()">Testar</button>
+
+    <div id="div_msg"></div>
+
+</body>
+<script>
+    function testar(){
+         var num1 = Number(input_n1.value)
+         var num2 = Number(input_n2.value)
+            if (num1 % num2 == 0){
+                div_msg.innerHTML = (`<img src="https://solulive.com/wp-content/uploads/2022/09/vote-positif.png">`)
+            } else div_msg.innerHTML =  (`<img src="https://cdn-icons-png.flaticon.com/512/2248/2248775.png">`)
+    }
+</script>
+</html>

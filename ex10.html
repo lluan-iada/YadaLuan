@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Informe a última série (SITCOM) assistiu: <br>
+    <input type="text" id="input_serie"> <br><br>
+    Informe o total de episódios que já assistiu da série: <br>
+    <input type="text" id="input_totalEp"> <br><br>
+
+     <button onclick="verificar()">Verificar Nível</button> <br>
+
+     <div id="div_msg"></div>
+
+</body>
+<script>
+    function verificar(){
+        var episodios = Number(input_totalEp.value)
+        var total = episodios * 22
+
+        div_msg.innerHTML =  (`Vejo que você gosta da série ${input_serie.value}<br>`)
+        if (total > 30){
+            div_msg.innerHTML += (`Uau, você realmente gosta dessa série!`)
+        }
+    }
+</script>
+</html>

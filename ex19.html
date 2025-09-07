@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado BOM DOCE</title>
+</head>
+<body>
+    Quantidade de chocolates comprados: <br>
+    <input type="text" id="input_chocolate"><br><br>
+
+    <button onclick="calcular()">Comprar</button> <br>
+
+    <div id="div_msg"></div>
+
+</body>
+<script>
+    function calcular(){
+        var chololate = Number(input_chocolate.value)
+        
+        if (chololate <= 12){
+            div_msg.innerHTML = (`o valor da sua compra foi de R$ ${chololate * 3}`)
+        } else div_msg.innerHTML = (`o valor da sua compra foi de R$ ${chololate * 2.50}`)
+    }
+</script>
+</html>

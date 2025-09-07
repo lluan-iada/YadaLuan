@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle Diário de Viagens</title>
+</head>
+
+<body>
+
+    <h1>Controle Diário de Viagens</h1>
+
+    Informe a Distância da Corrida (em km):
+    <input type="text" id="input_distanciaKM" placeholder="EX: 10"><br><br>
+
+    Informe o Valor do Pedágio:
+    <input type="text" id="input_pedagio"><br><br>
+
+    Informe a Bandeira (o valor será somente 1, 2 ou 3):
+    <input type="text" id="input_bandeira"><br><br>
+
+    <button onclick="acumular_valor()">Acumular corrida realizada</button>
+
+    <div id="div_mensagem"></div>
+
+
+
+</body>
+<script>
+    var corrida = 0
+    var acumulado_total = 0
+
+    function acumular_valor() {
+        var valor_pedagio = Number(input_pedagio.value);
+        var distancia_corrida = Number(input_distanciaKM.value);
+        var tipo_bandeira = Number(input_bandeira.value);
+
+        var bandeira1 = valor_pedagio * 0.035;
+        var bandeira2 = valor_pedagio * 0.117;
+        var bandeira3 = valor_pedagio * 0.223;
+
+        var valor_base_viagem = (distancia_corrida / 8) * 10;
+        var valor_corrida_atual = 0;
+
+        if (tipo_bandeira == 1) {
+            valor_corrida_atual = valor_base_viagem + (valor_pedagio - bandeira1);
+        } if (tipo_bandeira == 2) {
+            valor_corrida_atual = valor_base_viagem + (valor_pedagio - bandeira2);
+        } if (tipo_bandeira == 3) {
+            valor_corrida_atual = valor_base_viagem + (valor_pedagio - bandeira3);
+        }
+
+        corrida++;
+        acumulado_total += valor_corrida_atual;
+
+        div_mensagem.innerHTML +=
+            `${corrida}ª corrida de ${distancia_corrida}km com valor de R$ ${valor_corrida_atual} – ACUMULADO DO DIA R$ ${acumulado_total} <br>`
+    }
+</script>
+
+</html>

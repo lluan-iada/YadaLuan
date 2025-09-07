@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe uma temperatura:
+    <input type="text" id="input_temperatura">
+    <button onclick="analisar()">Verificar Clima</button> <br>
+
+    <div id="div_mensagem"></div>
+
+
+</body>
+<script>
+    function analisar(){
+        var temp = Number(input_temperatura.value)
+
+    if (temp < 10){
+        div_mensagem.innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/330px-Red_Apple.jpg">`
+    } if (temp >= 10){
+            div_mensagem.innerHTML = `<img src="https://media.istockphoto.com/id/147058486/pt/foto/uma-ma%C3%A7%C3%A3-estragada.jpg?s=612x612&w=0&k=20&c=jw9_8CiyM6lbEGqqxqDZXDO1q_F1IvnOQDPFotu6nMw=">`
+    }
+}
+    
+</script>
+</html>
